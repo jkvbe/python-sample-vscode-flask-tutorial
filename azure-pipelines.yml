@@ -29,7 +29,7 @@ steps:
     python -m pip install flake8
     flake8 .
   displayName: 'Run lint tests'
-  continueOnError: 
+  continueOnError: 'True'
 
 - script: |
     python -m pip install --upgrade pip
