@@ -28,10 +28,10 @@ steps:
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
-    python src/examples.py
   displayName: 'Install dependencies'
 
 - script: |
     pip install pytest pytest-azurepipelines
-    pytest
+    pip install pytest-cov
+    pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
   displayName: 'pytest'
